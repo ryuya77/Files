@@ -1,0 +1,30 @@
+#defualt setting
+autodetach on
+bell_msg "^G"
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+defscrollback 10000
+startup_message off
+vbell off
+escape ^Tt
+
+#hardstatus
+hardstatus alwayslastline "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} %{=b BW}[%H] %m/%d %c"
+
+# don't resize terminal width when re-attached.
+termcapinfo xterm 'is=\E[r\E[m\E[2J\E[H\E[?7h\E[?1;4;6l'
+
+#Logs
+hardcopydir "$HOME/screenlog"
+hardcopy_append on
+logfile "$HOME/screenlog/%H-%Y%m%d-%c-%n.log"
+deflog on
+
+#BindKey
+bind c eval 'screen 1'
+bind u encoding utf8
+bind e encoding eucJP
+bind s eval 'split' 'focus' 'screen 1'
+bind q only
+bind w windowlist -b
